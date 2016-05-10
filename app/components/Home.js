@@ -1,5 +1,5 @@
 var React = require('react');
-var transparentBg = require('../').transparentBg;
+var transparentBg = require('../styles').transparentBg;
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 

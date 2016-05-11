@@ -2,10 +2,13 @@ var React = require('react');
 var transparentBg = require('../styles').transparentBg;
 
 var PromptContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function () {
 
    return (
-     username:''
+     username: ''
    }
  },
 
@@ -20,10 +23,19 @@ var PromptContainer = React.createClass({
     e.preventDefault();
     var username = this.state.username;
     this.setState({
-      username:''
+      username: ''
     });
 
-  },
+    if (this.props.routeParams.playerOne) {
+      console.log(this.context)
+
+      //go to /battle
+
+    } else {
+      console.log(this.context)
+      //go to /playerTwo
+    }
+},
 
      <div className='jumbotron col-sm-6 col-sm-offset-3 text-center' style={transparentBg}>
 

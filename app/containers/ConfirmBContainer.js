@@ -5,6 +5,12 @@ var ConfirmBContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+  getInitialState: function () {
+    return (
+     isLoading: true,
+     playerInfo: []
+   }
+ },
   render: function() {
     return (
       <ConfirmB />

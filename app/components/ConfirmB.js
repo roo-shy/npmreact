@@ -6,4 +6,4 @@ function ConfirmB (props) {
   )
 }
 
-module.exports ConfirmB;
+module.exports = ConfirmB;

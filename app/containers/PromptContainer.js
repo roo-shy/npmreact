@@ -27,16 +27,22 @@ var PromptContainer = React.createClass({
     });
 
     if (this.props.routeParams.playerOne) {
-      console.log(this.context)
+      this.context.router.push({
+        pathname: '/battle',
+        query: {
+          playerOne: this.props.routeParams.playerOne,
+          playerTwo: this.state.username
+        }
+      })
 
-      //go to /battle
-
-    } else {
-      console.log(this.context)
-      //go to /playerTwo
+     } else {
+       this.context.router.push('/playerTwo/' + this.state.username)
     }
 },
 
+render: function () {
+    return (
+      
      <div className='jumbotron col-sm-6 col-sm-offset-3 text-center' style={transparentBg}>
 
      <h1>{this.props.route.header}</h1>

@@ -6,7 +6,7 @@ var ConfirmBContainer = React.createClass({
     router: React.PropTypes.object.isRequired
   },
   getInitialState: function () {
-    return (
+    return {
      isLoading: true,
      playerInfo: []
    }

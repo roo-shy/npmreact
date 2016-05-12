@@ -6,22 +6,34 @@ var ConfirmBContainer = React.createClass({
     router: React.PropTypes.object.isRequired
   },
   getInitialState: function () {
+    console.log('getInitialState')
     return {
-     isLoading: true,
+     isLoading: false,
      playerInfo: []
    }
  },
 
+componentWillMount: function () {
+  console.log('componentWillMount')
+},
+
  componentDidMount: function () {
    var query = this.props.location.query;
-   console log('QUERY', query);
+   console.log('componentDidMount')
    //Fetch info from GitHub and update the state
+ },
+ componentWillReceiveProps: function () {
+   console.log('componentWillReceiveProps')
+ },
+
+ componentWillUnmount: function () {
+   console.log('componentWillUnmount')
  },
 
   render: function() {
     return (
       <ConfirmB
-      isLoading={this.props.isLoading}
+      isLoading={this.state.isLoading}
       playersInfo={this.state.playersInfo}/>
 
     );

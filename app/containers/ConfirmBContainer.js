@@ -11,9 +11,18 @@ var ConfirmBContainer = React.createClass({
      playerInfo: []
    }
  },
+
+ componentDidMount: function () {
+   var query = this.props.location.query;
+   console log('QUERY', query);
+   //Fetch info from GitHub and update the state
+ },
+
   render: function() {
     return (
-      <ConfirmB />
+      <ConfirmB
+      isLoading={this.props.isLoading}
+      playersInfo={this.state.playersInfo}/>
 
     );
   }

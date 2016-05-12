@@ -1,5 +1,6 @@
 var React = require('react');
 var ConfirmB = require('../components/ConfirmB');
+var githubHelpers = require('../utils/githubHelpers');
 
 var ConfirmBContainer = React.createClass({
   contextTypes: {
@@ -19,8 +20,7 @@ componentWillMount: function () {
 
  componentDidMount: function () {
    var query = this.props.location.query;
-   console.log('componentDidMount')
-   //Fetch info from GitHub and update the state
+   githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
  },
  componentWillReceiveProps: function () {
    console.log('componentWillReceiveProps')

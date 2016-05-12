@@ -9,7 +9,7 @@ var ConfirmBContainer = React.createClass({
   getInitialState: function () {
     console.log('getInitialState')
     return {
-     isLoading: false,
+     isLoading: true,
      playerInfo: []
    }
  },
@@ -20,7 +20,14 @@ componentWillMount: function () {
 
  componentDidMount: function () {
    var query = this.props.location.query;
+   //https://egghead.io/playlists/the-this-key-word-250c37d9
    githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+    .then(function (players) {
+      this.setState({
+        isLoading: false,
+         playersInfo: [players[0], players[1]]
+      })
+    }.bind(this))
  },
  componentWillReceiveProps: function () {
    console.log('componentWillReceiveProps')

@@ -10,7 +10,7 @@ var ConfirmBContainer = React.createClass({
     console.log('getInitialState')
     return {
      isLoading: true,
-     playerInfo: []
+     playersInfo: []
    }
  },
 
@@ -37,10 +37,20 @@ componentWillMount: function () {
    console.log('componentWillUnmount')
  },
 
+ handleInitiateBattle: function () {
+   this.context.router.push({
+     pathname: '/results',
+     state: {
+       playersInfo: this.state.playerInfo
+     }
+   })
+ },
+
   render: function() {
     return (
       <ConfirmB
       isLoading={this.state.isLoading}
+      onInitiateBattle={this.handleInitiateBattle}
       playersInfo={this.state.playersInfo}/>
 
     );

@@ -15,7 +15,7 @@ function UserDetails (user) {
 }
 
 UserDetails.PropTypes = {
-  score: PropTypes.number.
+  score: PropTypes.number,
   info: PropTypes.shape({
     avatar_url: PropTypes.string.isRequired,
     company: PropTypes.string,

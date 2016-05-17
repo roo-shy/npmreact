@@ -7,7 +7,7 @@ function puke (obj) {
 
 function Results (props) {
   return (
-    <div>Results</div>
+    <div>Results: {puke(props)}</div>
   )
 }
 

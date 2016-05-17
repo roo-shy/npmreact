@@ -27,8 +27,8 @@ var ResultsContainer = React.createClass({
       isLoading={this.state.isLoading}
       playersInfo={this.props.location.state.playersInfo}
       scores={this.state.scores} />
-  );
-}
+    );
+  }
 
 });
 

@@ -18,9 +18,6 @@ function getTotalStars (repos) {
  }
 
 function getPlayersData (player) {
-  // get Repos
-  // getTotalStars
-  // return object with that data
   return getRepos(player.login)
     .then(getTotalStars)
     .then(function (totalStars) {
@@ -32,7 +29,6 @@ function getPlayersData (player) {
   }
 
 function calculateScores (players) {
-  //return an array, after doing some algorithms to define a winner
    return [
      players[0].followers * 3 + players[0].totalStars,
      players[1].followers * 3 + players[1].totalStars

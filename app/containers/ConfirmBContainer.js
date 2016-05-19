@@ -30,11 +30,9 @@ componentWillMount: function () {
     }.bind(this))
  },
  componentWillReceiveProps: function () {
-   console.log('componentWillReceiveProps')
  },
 
  componentWillUnmount: function () {
-   console.log('componentWillUnmount')
  },
 
  handleInitiateBattle: function () {
